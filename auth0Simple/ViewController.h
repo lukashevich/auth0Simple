@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class A0Lock;
+
 @interface ViewController : UIViewController
 
+@property (readonly, nonatomic) A0Lock *lock;
+
++ (ViewController *)sharedInstance;
 
 @end
 

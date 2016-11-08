@@ -16,6 +16,7 @@
 		84F989471DCC9E0F00160991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F989451DCC9E0F00160991 /* LaunchScreen.storyboard */; };
 		84F989521DCC9E0F00160991 /* auth0SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F989511DCC9E0F00160991 /* auth0SimpleTests.m */; };
 		84F9895D1DCC9E0F00160991 /* auth0SimpleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9895C1DCC9E0F00160991 /* auth0SimpleUITests.m */; };
+		D6E2AB83BED81D640F6A26D5 /* libPods-auth0Simple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7BB62A7D64BD78456F5C07 /* libPods-auth0Simple.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		84F989581DCC9E0F00160991 /* auth0SimpleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = auth0SimpleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F9895C1DCC9E0F00160991 /* auth0SimpleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = auth0SimpleUITests.m; sourceTree = "<group>"; };
 		84F9895E1DCC9E0F00160991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A7BB62A7D64BD78456F5C07 /* libPods-auth0Simple.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-auth0Simple.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2483B998D6082B2F16074A /* Pods-auth0Simple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth0Simple.debug.xcconfig"; path = "Pods/Target Support Files/Pods-auth0Simple/Pods-auth0Simple.debug.xcconfig"; sourceTree = "<group>"; };
+		BD815FE45FABEEAADE863C1F /* Pods-auth0Simple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth0Simple.release.xcconfig"; path = "Pods/Target Support Files/Pods-auth0Simple/Pods-auth0Simple.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E2AB83BED81D640F6A26D5 /* libPods-auth0Simple.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107D9F3B316108C6EF5C05A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF2483B998D6082B2F16074A /* Pods-auth0Simple.debug.xcconfig */,
+				BD815FE45FABEEAADE863C1F /* Pods-auth0Simple.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84F989281DCC9E0F00160991 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +101,8 @@
 				84F989501DCC9E0F00160991 /* auth0SimpleTests */,
 				84F9895B1DCC9E0F00160991 /* auth0SimpleUITests */,
 				84F989321DCC9E0F00160991 /* Products */,
+				107D9F3B316108C6EF5C05A8 /* Pods */,
+				ECEEB900E8AFE494E1F96695 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +159,14 @@
 			path = auth0SimpleUITests;
 			sourceTree = "<group>";
 		};
+		ECEEB900E8AFE494E1F96695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A7BB62A7D64BD78456F5C07 /* libPods-auth0Simple.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F989611DCC9E0F00160991 /* Build configuration list for PBXNativeTarget "auth0Simple" */;
 			buildPhases = (
+				0A188C3EC2352E997E451022 /* [CP] Check Pods Manifest.lock */,
 				84F9892D1DCC9E0F00160991 /* Sources */,
 				84F9892E1DCC9E0F00160991 /* Frameworks */,
 				84F9892F1DCC9E0F00160991 /* Resources */,
+				D9D9BBB685E7B2C5EB755F45 /* [CP] Embed Pods Frameworks */,
+				226F63C1DA5EAC0A2F450235 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,6 +300,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A188C3EC2352E997E451022 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		226F63C1DA5EAC0A2F450235 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-auth0Simple/Pods-auth0Simple-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D9BBB685E7B2C5EB755F45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-auth0Simple/Pods-auth0Simple-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84F9892D1DCC9E0F00160991 /* Sources */ = {
@@ -429,10 +504,12 @@
 		};
 		84F989621DCC9E0F00160991 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF2483B998D6082B2F16074A /* Pods-auth0Simple.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SZZH8KK7M7;
 				INFOPLIST_FILE = auth0Simple/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feanor.auth0Simple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,10 +518,12 @@
 		};
 		84F989631DCC9E0F00160991 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD815FE45FABEEAADE863C1F /* Pods-auth0Simple.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SZZH8KK7M7;
 				INFOPLIST_FILE = auth0Simple/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feanor.auth0Simple;
 				PRODUCT_NAME = "$(TARGET_NAME)";

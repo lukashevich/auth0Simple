@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Lock/Lock.h>
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    A0Lock *lock = [[ViewController sharedInstance] lock];
+    [lock applicationLaunchedWithOptions:launchOptions];
+    
     return YES;
 }
 
@@ -26,6 +31,10 @@
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    A0Lock *lock = [[ViewController sharedInstance] lock];
+    return [lock handleURL:url sourceApplication:sourceApplication];
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
