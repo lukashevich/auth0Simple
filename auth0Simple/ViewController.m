@@ -20,6 +20,8 @@
     
     _lock = [A0Lock newLock];
     [self.view setBackgroundColor:[UIColor greenColor]];
+    //for new commit
+    
     
     [self performSelector:@selector(begin) withObject:nil afterDelay:5.0];
     // Do any additional setup after loading the view, typically from a nib.
